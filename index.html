@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>C78 PROJECT</title>
+        <style>
+            button:hover{
+                width: 80px;
+                height: 30px;
+                background-color: blue;
+            }
+        </style>
+    </head>
+    <body>
+        <center>
+            <div id="slide">
+                <img style="visibility: hidden;">
+                <h2>My Family Book</h2>
+                <span></span><br>
+                <button id="prev">Prev</button><button id="next">Next</button>
+            </div>
+        </center>
+    </body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        var slideNo = 0;
+        var info = [
+            {
+                imageSrc: "false",
+                h2text: "My Family Book",
+                spantext: ""
+            },
+            {
+                imageSrc: "thata.jpg",
+                h2text: "Balaram Krishna Masimukku",
+                spantext: "--My Grandfather--"
+            },
+            {
+                imageSrc: "Nannama.jpg",
+                h2text: "Tulasi Masimukku",
+                spantext: "--My Grandmother--"
+            },
+            {
+                imageSrc: "Nanna.jpg",
+                h2text: "Bharat Krishna Masimukku",
+                spantext: "--My Father--"
+            },
+            {
+                imageSrc: "Babai.jpg",
+                h2text: "Srinivas Masimukku",
+                spantext: "--My Uncle--"
+            },
+            {
+                imageSrc: "Amma.jpg",
+                h2text: "Pavani Masimukku",
+                spantext: "--My Mother--"
+            },
+            {
+                imageSrc: "Pinni.jpg",
+                h2text: "Meghana Masimukku",
+                spantext: "--My Aunt--"
+            },
+            {
+                imageSrc: "Me.jpg",
+                h2text: "Sriram Masimukku",
+                spantext: "--Me--"
+            },
+            {
+                imageSrc: "Sai.jpg",
+                h2text: "Sai Aaditya Masimukku",
+                spantext: "--My Brother--"
+            },
+            {
+                imageSrc: "Aadhya.jpg",
+                h2text: "Aadhya Masimukku",
+                spantext: "--My Cousin--"
+            },
+            {
+                imageSrc: "Sriyan.jpg",
+                h2text: "Sriyan Masimukku",
+                spantext: "--My Cousin--"
+            },
+        ];
+        $("#next").click(function(){
+            slideNo++;
+            if(slideNo == 12){
+                slideNo = 0;
+            }
+            var s= $("#slide");
+            s.css("position", "absolute");
+            s.css("top", "10px");
+            s.css("margin", "auto");
+            var sIMG = $("#slide img");
+            if(info[slideNo].imageSrc === "false"){
+                sIMG.hide();
+            }else{
+                sIMG.attr("src", info[slideNo].imageSrc);
+                sIMG.css("visibility", "visible");
+                sIMG.css("height", "100px");
+                sIMG.css("border", "3px ridge yellow");
+                sIMG.show();
+            }
+            $("#slide h2").text(info[slideNo].h2text);
+            $("#slide span").text(info[slideNo].spantext);
+        });
+        $("#prev").click(function(){
+            slideNo--;
+            if(slideNo == -1){
+                slideNo = 11;
+            }
+            var s= $("#slide");
+            s.css("position", "absolute");
+            s.css("top", "10px");
+            s.css("margin", "auto");
+            var sIMG = $("#slide img");
+            if(info[slideNo].imageSrc === "false"){
+                sIMG.hide();
+            }else{
+                sIMG.attr("src", info[slideNo].imageSrc);
+                sIMG.css("visibility", "visible");
+                sIMG.css("height", "100px");
+                sIMG.css("border", "3px ridge yellow");
+                sIMG.show();
+            }
+            $("#slide h2").text(info[slideNo].h2text);
+            $("#slide span").text(info[slideNo].spantext);
+        });
+    </script>
+</html>
