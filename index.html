@@ -9,6 +9,13 @@
                 height: 30px;
                 background-color: blue;
             }
+            h2{
+                color: blue;
+                font-family: cursive;
+            }
+            button{
+                background-color: gray;
+            }
         </style>
     </head>
     <body>
@@ -41,12 +48,12 @@
                 spantext: "--My Grandmother--"
             },
             {
-                imageSrc: "Nanna.jpg",
+                imageSrc: "Nanna.JPG",
                 h2text: "Bharat Krishna Masimukku",
                 spantext: "--My Father--"
             },
             {
-                imageSrc: "Babai.jpg",
+                imageSrc: "Babai.JPG",
                 h2text: "Srinivas Masimukku",
                 spantext: "--My Uncle--"
             },
@@ -56,7 +63,7 @@
                 spantext: "--My Mother--"
             },
             {
-                imageSrc: "Pinni.jpg",
+                imageSrc: "Pinni.JPG",
                 h2text: "Meghana Masimukku",
                 spantext: "--My Aunt--"
             },
@@ -83,7 +90,7 @@
         ];
         $("#next").click(function(){
             slideNo++;
-            if(slideNo == 12){
+            if(slideNo == 11){
                 slideNo = 0;
             }
             var s= $("#slide");
@@ -105,7 +112,7 @@
         });
         $("#prev").click(function(){
             slideNo--;
-            if(slideNo == -1){
+            if(slideNo == 0){
                 slideNo = 11;
             }
             var s= $("#slide");
